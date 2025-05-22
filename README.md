@@ -1,4 +1,4 @@
-# UxBet
+# UXBET
 Este projeto é um template de bet (jogos online) que traz diversos jogos para que você possa se divertir e até ganhar uma grana extra. Contudo, sua finalidade é acadêmica, incentivando o uso responsável da plataforma.
 Todos os dados estão mockados e separados de acordo com cada componente ou arquivo utils.ts
 
