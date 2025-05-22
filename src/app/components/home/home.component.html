@@ -1,0 +1,53 @@
+<app-header></app-header>
+<section class="home">
+  <!-- Banner -->
+  <div class="banner">
+    <img src="assets/banner-bacbo.png" alt="Bac Bo Live" />
+  </div>
+
+  <!-- Busca -->
+  <div class="search-box">
+    <mat-icon class="icon">search</mat-icon>
+    <input
+      id="searchInput"
+      type="text"
+      [(ngModel)]="searchQuery"
+      placeholder="Pesquise por jogos e provedores"
+      (input)="filterGame($event)"
+    />
+  </div>
+
+  <!-- Categorias -->
+  <div class="category-buttons">
+    <button
+      *ngFor="let category of jogos"
+      [class.active]="category === selectedCategory"
+      (click)="selectedCategory = category"
+    >
+      {{ category }}
+    </button>
+  </div>
+
+  <!-- Carrosséis filtrados -->
+  <div class="home-page">
+    <div
+      class="category"
+      *ngFor="let category of searchGame"
+      [hidden]="selectedCategory !== 'Todos' && category.title !== selectedCategory"
+    >
+      <div class="category-header">
+        <span class="category-title">🎰 {{ category.title }}</span>
+        <a class="view-all" href="#">Ver todos</a>
+      </div>
+
+      <div class="game-carousel" #carousel>
+        <div class="carousel-track">
+          <div class="game-card" *ngFor="let game of category.games">
+            <img [src]="game.image" [alt]="game.name" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

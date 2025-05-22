@@ -1,0 +1,23 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h1 class="brand">ux<span>bet</span></h1>
+    <h2>{{ isRegister ? 'Crie sua conta' : 'Faça login' }}</h2>
+
+    <form>
+      <input type="text" placeholder="Usuário" />
+      <input type="password" placeholder="Senha" />
+      <button type="submit">
+        {{ isRegister ? 'Registrar-se' : 'Entrar' }}
+      </button>
+    </form>
+
+    <p class="switch-mode">
+      {{ isRegister ? 'Já tem conta?' : 'Não tem conta?' }}
+      <a href="#" (click)="isRegister = !isRegister">
+        {{ isRegister ? 'Faça login' : 'Registre-se' }}
+      </a>
+    </p>
+
+    <p class="responsible">Jogue com responsabilidade.</p>
+  </div>
+</div>

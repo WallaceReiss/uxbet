@@ -1,0 +1,92 @@
+$gold: #c8a042;
+$dark: #1e1e1e;
+$white: #ffffff;
+
+.header {
+  background-color: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+
+  &__left {
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      &--gold {
+        color: $gold;
+      }
+
+      &--white {
+        color: $white;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 1.5rem;
+
+    .menu__item {
+      color: $white;
+      font-weight: bold;
+      text-decoration: none;
+
+      &--active {
+        color: $gold;
+        border-bottom: 2px solid $gold;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      color: $white;
+    }
+
+    .btn {
+      padding: 0.4rem 1rem;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      border: none;
+
+      &--gold {
+        background-color: $gold;
+        color: $white;
+      }
+
+      &--outline {
+        background: transparent;
+        color: $white;
+        border: 1px solid $white;
+      }
+    }
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__menu {
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+
+    &__right {
+      width: 100%;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+  }
+}

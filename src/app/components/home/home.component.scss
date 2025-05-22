@@ -1,0 +1,134 @@
+$gold: #c8a042;
+$dark: #1e1e1e;
+$white: #ffffff;
+$gray: #2c2c2c;
+
+.home {
+  padding: 1rem 2rem;
+  background-color: $dark;
+  color: $white;
+
+  .banner {
+    width: 100%;
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    background-color: $gray;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+
+    .icon {
+      color: #888;
+      margin-right: 0.5rem;
+    }
+
+    input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: $white;
+      font-size: 1rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    button {
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      border: none;
+      background-color: #333;
+      color: $white;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &.active {
+        background-color: $gold;
+        color: $dark;
+      }
+    }
+  }
+}
+
+.home-page {
+  padding: 1rem;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.category {
+  margin-bottom: 2rem;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .category-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .view-all {
+    font-size: 0.875rem;
+    color: #bfa55a;
+    text-decoration: none;
+  }
+}
+
+.game-carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  .carousel-track {
+    display: flex;
+    gap: 0.8rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+
+    .game-card {
+      flex: 0 0 auto;
+      width: 130px;
+      scroll-snap-align: start;
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #222;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
+
+.game-carousel.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+
+.game-carousel::-webkit-scrollbar {
+  display: none;
+}
+
